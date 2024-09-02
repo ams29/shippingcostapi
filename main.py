@@ -39,7 +39,7 @@ def get_shipping_cost_comparison(carriers, num_examples=5):
 
     response = openai.chat.completion.create(
         model="gpt-4o-mini",
-        response_format={"type": "json_object"}
+        response_format={"type": "json_object"},
         messages=[
             {"role": "system", "content": "You are a helpful assistant that generates realistic shipping carrier data."},
             {"role": "user", "content": prompt}
