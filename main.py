@@ -28,9 +28,7 @@ def get_shipping_cost_comparison(carriers, num_examples=5):
             "fedex": 12.04,
             "ups": 6.99,
             "usps": 6.77,
-            "orchestro": 5.85,
-            "avgSavings": 2.75,
-            "percentSavings": 31.98
+            "orchestro": 5.85
         }},
         ...
       ]
