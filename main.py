@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import openai
 import os
@@ -8,6 +9,15 @@ import json
 openai.api_key = os.getenv("OPENAI_API_KEY")  # Load this from environment variables or set it directly.
 
 app = FastAPI()
+
+# Add CORS middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allows all origins, you can restrict this in production
+    allow_credentials=True,
+    allow_methods=["*"],  # Allows all HTTP methods
+    allow_headers=["*"],  # Allows all headers
+)
 
 # Pydantic model for the shipping cost comparison request
 class ShippingCostComparisonRequest(BaseModel):
